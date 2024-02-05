@@ -16,9 +16,9 @@ const Sidebar = () => {
         } w-full aspect-square flexCenter`}
         onClick={() => router.push("/")}
       >
-        <IconCode
+        <IconCrown
           width={32}
-          fill={pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
+          fill={!pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
         />
       </span>
       <span
@@ -27,9 +27,9 @@ const Sidebar = () => {
         } w-full aspect-square flexCenter`}
         onClick={() => router.push("/problem")}
       >
-        <IconCrown
+        <IconCode
           width={32}
-          fill={!pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
+          fill={pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
         />
       </span>
     </aside>
