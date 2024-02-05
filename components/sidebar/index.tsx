@@ -18,7 +18,7 @@ const Sidebar = () => {
       >
         <IconCrown
           width={32}
-          fill={!pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
+          fill={!pathName.includes("problem") ? ICONSTATUS[1] : ICONSTATUS[0]}
         />
       </span>
       <span
@@ -29,7 +29,7 @@ const Sidebar = () => {
       >
         <IconCode
           width={32}
-          fill={pathName.includes("problem") ? ICONSTATUS[0] : ICONSTATUS[1]}
+          fill={pathName.includes("problem") ? ICONSTATUS[1] : ICONSTATUS[0]}
         />
       </span>
     </aside>
