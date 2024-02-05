@@ -27,11 +27,14 @@ const ProblemCodeBlock = ({ id, name, isSelected }: IProblem) => {
   };
 
   const handleFetchData = async () => {
-    const candidate = await fetch(`
+    const candidate = await fetch(
+      `
     ${process.env.NEXT_PUBLIC_API_URL}/${
-      process.env.NEXT_PUBLIC_API_VERSION
-    }/problems/${pathName.split("/")[2]}/codes
-    `);
+        process.env.NEXT_PUBLIC_API_VERSION
+      }/problems/${pathName.split("/")[2]}/codes
+    `,
+      { cache: "no-store" }
+    );
     const candiData: ICandidates = await candidate.json();
     console.log(candiData);
     setCandidateList(candiData.codes);

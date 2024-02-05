@@ -1,11 +1,9 @@
 "use client";
 
 import { usePathname } from "next/navigation";
-import CodeFetcher from "../components/problemPage";
 
 const ProblemPage = () => {
   const pathName = usePathname();
-  console.log(pathName.split("/").length);
   return (
     <main className="w-full h-full flex flex-row">
       <div className="bg-[#282a36] w-full h-full flexCenterCol gap-10">

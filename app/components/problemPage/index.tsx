@@ -18,7 +18,8 @@ const CodeFetcher = ({ codeId }: { codeId: number }) => {
     setIsLoading(true);
     try {
       const code = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/codes/${codeId}`
+        `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/codes/${codeId}`,
+        { cache: "no-store" }
       );
       if (code.status === 204) {
         setCodeData(null);

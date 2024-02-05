@@ -15,7 +15,8 @@ interface IProblem {
 
 const ProblemList = async () => {
   const data = await fetch(
-    `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/problems`
+    `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/problems`,
+    { cache: "no-store" }
   );
   const jsonData = await data.json();
   return (

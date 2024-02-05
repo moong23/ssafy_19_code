@@ -20,7 +20,8 @@ const ProblemCodeFetcher = ({ codeId }: { codeId: number }) => {
     setIsLoading(true);
     try {
       const bestCode = await fetch(
-        `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/problems/${codeId}/best`
+        `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/problems/${codeId}/best`,
+        { cache: "no-store" }
       );
       if (bestCode.status === 204) {
         setBestCodeData(null);
