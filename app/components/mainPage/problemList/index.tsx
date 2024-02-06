@@ -20,7 +20,7 @@ const ProblemList = async () => {
   );
   const jsonData = await data.json();
   return (
-    <div className="w-[260px] h-full bg-[#262626] shrink-0">
+    <div className="w-[260px] h-full bg-[#262626] shrink-0 overflow-y-scroll">
       {jsonData.items.map((data: IProblemApiData) => (
         <ProblemDate
           key={data.date}
