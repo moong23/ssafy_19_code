@@ -18,10 +18,17 @@ const CodeList = async () => {
     `${process.env.NEXT_PUBLIC_API_URL}/${process.env.NEXT_PUBLIC_API_VERSION}/problems`,
     { cache: "no-store" }
   );
-  const jsonData = await data.json();
+  const jsonData = (await data.json()).items.sort(
+    (a: IProblemApiData, b: IProblemApiData) => b.date.localeCompare(a.date)
+  );
+
+  // const renderData = jsonData.items.sort(
+  //   (a: IProblemApiData, b: IProblemApiData) => b.date.localeCompare(a.date)
+  // );
+
   return (
     <div className="w-[260px] h-full bg-[#262626] shrink-0 overflow-y-scroll">
-      {jsonData.items.map((data: IProblemApiData) => (
+      {jsonData.map((data: IProblemApiData) => (
         <CodeDate
           key={data.date}
           date={data.date}
