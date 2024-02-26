@@ -20,12 +20,16 @@ const ProblemBlock = ({ id, name, isSelected }: IProblem) => {
         id === Number(pathName.split("/")[2]) && "bg-[#34363F]"
       } w-full h-8 flex flex-row gap-2 justify-start items-center hover:bg-[#34363F] pl-10 pr-4`}
     >
-      <IconFile
-        width={16}
-        fill={
-          Number(pathName.split("/")[2]) !== id ? ICONSTATUS[0] : ICONSTATUS[1]
-        }
-      />
+      <div className="width-[10%]">
+        <IconFile
+          width={16}
+          fill={
+            Number(pathName.split("/")[2]) !== id
+              ? ICONSTATUS[0]
+              : ICONSTATUS[1]
+          }
+        />
+      </div>
       <div className="text-[11px] text-white cursor-pointer truncate">
         {name}
       </div>

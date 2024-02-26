@@ -52,20 +52,24 @@ const ProblemCodeBlock = ({ id, name, isSelected }: IProblem) => {
           id === Number(pathName.split("/")[2]) && "bg-[#34363F]"
         } w-full h-8 flex flex-row gap-2 justify-start items-center hover:bg-[#34363F] pl-10 pr-4`}
       >
-        <IconChevDown
-          width={12}
-          height={12}
-          fill={"white"}
-          direction={id === Number(pathName.split("/")[2]) ? "down" : "right"}
-        />
-        <IconFile
-          width={16}
-          fill={
-            Number(pathName.split("/")[2]) !== id
-              ? ICONSTATUS[0]
-              : ICONSTATUS[1]
-          }
-        />
+        <div className="w-[12px]">
+          <IconChevDown
+            width={12}
+            height={12}
+            fill={"white"}
+            direction={id === Number(pathName.split("/")[2]) ? "down" : "right"}
+          />
+        </div>
+        <div className="w-[10%] flex-grow-0 flex-shrink-0">
+          <IconFile
+            width={16}
+            fill={
+              Number(pathName.split("/")[2]) !== id
+                ? ICONSTATUS[0]
+                : ICONSTATUS[1]
+            }
+          />
+        </div>
         <div className="text-[11px] text-white cursor-pointer truncate">
           {name}
         </div>
